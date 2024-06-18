@@ -1,0 +1,53 @@
+/* static/css/styles.css */
+
+body.light-mode {
+    background-color: white;
+    color: black;
+}/* Reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.navbar {
+    background-color: #007bff;
+    color: #fff;
+    padding: 1rem;
+}
+
+.main-content {
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+.button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+/* Add additional styling for forms, headers, etc. */
