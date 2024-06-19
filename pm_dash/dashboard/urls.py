@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import TaskViewSet, homepage, signup, user_login, user_logout, index, about, projects, quality_centre, analytics
+from .views import TaskViewSet, homepage, signup, user_login, user_logout, index, about, projects, quality_centre
 
 router = DefaultRouter()
 router.register(r'tasks', TaskViewSet)
@@ -15,5 +15,4 @@ urlpatterns = [
     path('projects/', projects, name='projects'),
     path('quality_centre/', quality_centre, name='quality_centre'),
     path('api/', include(router.urls)),
-    path('analytics/', projects, name='analytics'),
 ]
