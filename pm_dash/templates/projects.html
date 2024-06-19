@@ -116,7 +116,7 @@
       <canvas id="myChart"></canvas>
       <input type="month" onchange="chartFilter(this)" aria-label="Filter by month" />
       <button onclick="showAllTasks()">Show All Tasks</button>
-      <!-- Form to add new task -->
+      <!-- To add new task -->
       <form id="addTaskForm">
         <input type="text" id="taskName" placeholder="Task Name" required>
         <input type="text" id="assignedTo" placeholder="Assigned To" required>
@@ -158,7 +158,7 @@
       datasets: [{
         label: 'Tasks',
         data: [],
-        backgroundColor: (ctx) => colors[ctx.raw?.status ?? 0], // Default to 'Not Started' if status is undefined
+        backgroundColor: (ctx) => colors[ctx.raw?.status ?? 0], 
         borderColor: (ctx) => colors[ctx.raw?.status ?? 0],
         borderWidth: 1,
         borderSkipped: false,
@@ -241,7 +241,7 @@
       config
     );
 
-    // Fetch tasks from the backend when the page loads
+    // Fetching tasks from the backend when the page loads
     window.onload = async () => {
     try {
         const response = await fetch('http://localhost:8000/api/tasks/');
@@ -306,7 +306,7 @@ document.getElementById('addTaskForm').addEventListener('submit', async function
     }
 });
 
-    // Function to filter tasks by selected month
+    // Filtering tasks by selected month
     function chartFilter(input) {
       const selectedMonth = new Date(input.value);
       const startOfMonth = new Date(selectedMonth.getFullYear(), selectedMonth.getMonth(), 1);
@@ -316,7 +316,7 @@ document.getElementById('addTaskForm').addEventListener('submit', async function
       myChart.update();
     }
 
-    // Function to reset the chart to show all tasks
+    // Resetting the chart to show all tasks
     function showAllTasks() {
       myChart.options.scales.x.min = '2024-06-01';
       myChart.options.scales.x.max = '2024-12-31';

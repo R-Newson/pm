@@ -58,7 +58,3 @@ def projects(request):
 @login_required
 def quality_centre(request):
     return render(request, 'quality_centre.html')
-
-@login_required
-def analytics(request):
-    return render(request, 'analytics.html')

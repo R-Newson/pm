@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quality Centre</title>
-  <!-- Stylesheets -->
+  <!-- My stylesheets -->
   <link href="https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.css" rel="stylesheet" type="text/css" />
   <style>
     * {
@@ -141,7 +141,7 @@
       <div class="chartBox">
         <!-- Gantt Chart -->
         <div id="ganttChart" style="height: 400px;"></div>
-        <!-- Form to add new task -->
+        <!-- Adding new task form -->
         <form id="addTaskForm">
           <input type="text" id="taskName" placeholder="Task Name" required>
           <input type="text" id="assignedTo" placeholder="Assigned To" required>
@@ -161,7 +161,7 @@
     </div>
     <div class="chartCard">
       <div class="chartBox">
-        <!-- Another Chart Placeholder -->
+        <!-- Other Chart Placeholder -->
         <canvas id="myChart"></canvas>
       </div>
     </div>
@@ -186,7 +186,7 @@
   <!-- JavaScript for Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    // Gantt Chart initialization
+    // Initialization of Gantt Chart 
     gantt.config.xml_date = '%Y-%m-%d';
     gantt.init('ganttChart');
 
@@ -200,7 +200,7 @@
       5: 'red'
     };
 
-    // Set Task Colors
+    // Task Colors
     gantt.templates.task_class = function(start, end, task){
       return 'status-' + task.status;
     };
@@ -228,7 +228,7 @@
       }
     };
 
-    // Handle form submission to add new task
+    // To handle form submission; adding new task
     document.getElementById('addTaskForm').addEventListener('submit', async (event) => {
       event.preventDefault();
 
@@ -272,7 +272,7 @@
       }
     });
 
-    // Handle task status update
+    // To andle task status update
     gantt.attachEvent('onAfterTaskUpdate', async (id, item) => {
       try {
         const response = await fetch(`http://localhost:8000/api/tasks/${id}/`, {
